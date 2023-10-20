@@ -25,10 +25,23 @@
 2. Film yang dicari ditampilkan.
      1. Bila film tidak ada, tampilkan informasi bahwa tidak ada film yang ditemukan
 
+## Scenario D : Menampilkan Daftar Film.
+1. Buka halaman daftar film yang disukai.
+2. Tampilkan semua film yang disukai.
+     1. Presenter meminta semua daftar film yang disukai kepada Model.
+     2. Model mengembalikan daftar film.
+     3. Presenter meminta View menampilkan daftar film.
+3. Bila tidak ada film yang disukai, berikan informasi mengenai kondisi tersebut.
+     1. Presenter meminta semua daftar film yang disukai kepada Model.
+     2. Model mengembalikan daftar kosong.
+     3. Presenter meminta View menampilkan informasi bahwa belum ada film yang disukai.
+
 ## List ToDo:
 1. Memberi nama yang lebih berbeda untuk **createLikeButtonTemplate** dan **createLikedButtonTemplate**.
 2. Alur negatif: sistem tidak memproses penyimpanan dan menyebabkan kegagalan jika menyimpan movie tanpa ID.
 3. Meringkas kode untuk mempersiapkan tes.
+4. Menyesuaikan template hasil pencarian agar dapat menggunakan template menampilkan daftar film yang disukai.
+5. Mengubah nama FavoriteMovieSearchView agar lebih general.
 
 ## Daftar kontrak Favorite Movies
 - Dapat mengembalikan film yang tersimpan berdasarkan kunci tertentu.
