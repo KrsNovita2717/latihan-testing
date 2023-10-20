@@ -1,3 +1,4 @@
+import { async } from 'regenerator-runtime';
 import FavoriteMovieIdb from '../src/scripts/data/favorite-movie-idb';
 import LikeButtonInitiator from '../src/scripts/utils/like-button-initiator';
 
@@ -44,6 +45,21 @@ describe('Liking A Movie', () => {
     const movie = await FavoriteMovieIdb.getMovie(1);
     expect(movie).toEqual({ id: 1 });
 
+    await FavoriteMovieIdb.deleteMovie(1);
+  });
+
+  it('should not add a movie again when its already liked', async () => {
+    await LikeButtonInitiator.init({
+      likeButtonContainer: document.querySelector('#likeButtonContainer'),
+      movie: {
+        id: 1,
+      },
+    });
+
+    await FavoriteMovieIdb.putMovie({ id: 1 });
+    document.querySelector('#likeButton').dispatchEvent(new Event('click'));
+
+    expect(await FavoriteMovieIdb.getAllMovies()).toEqual([{ id: 1 }]);
     await FavoriteMovieIdb.deleteMovie(1);
   });
 });
