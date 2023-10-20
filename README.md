@@ -45,9 +45,9 @@
 
 *TODO yang berkaitan dengan keharmonisan*
 4. Menyesuaikan template hasil pencarian agar dapat menggunakan template menampilkan daftar film yang disukai.
-5. Mengubah nama FavoriteMovieSearchView agar lebih general.
+5. Mengharmoniskan kedua method yang menampilkan daftar film yang disukai, yaitu showFavoriteMovies dan showMovies.
 6. Menyesuaikan template hasil pencarian agar dapat menggunakan template menampilkan daftar film yang disukai.
-7. Mengharmoniskan kedua method yang menampilkan daftar film yang disukai, yaitu showFavoriteMovies dan showMovies.
+7. Mengubah nama FavoriteMovieSearchView agar lebih general.
 8. Mengubah nama FavoriteMovieSearchView agar lebih general.
 
 ## Daftar kontrak Favorite Movies
