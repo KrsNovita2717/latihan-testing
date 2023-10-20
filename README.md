@@ -39,7 +39,11 @@
 ## List ToDo:
 1. Memberi nama yang lebih berbeda untuk **createLikeButtonTemplate** dan **createLikedButtonTemplate**.
 2. Alur negatif: sistem tidak memproses penyimpanan dan menyebabkan kegagalan jika menyimpan movie tanpa ID.
+
+
 3. Meringkas kode untuk mempersiapkan tes.
+
+*TODO yang berkaitan dengan keharmonisan*
 4. Menyesuaikan template hasil pencarian agar dapat menggunakan template menampilkan daftar film yang disukai.
 5. Mengubah nama FavoriteMovieSearchView agar lebih general.
 6. Menyesuaikan template hasil pencarian agar dapat menggunakan template menampilkan daftar film yang disukai.
