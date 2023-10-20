@@ -13,6 +13,16 @@ class FavoriteMovieSearchView {
     `;
   }
 
+  getFavoriteMovieTemplate() {
+    return `
+      <div class="content">
+        <h2 class="content__heading">Your Liked Movie</h2>
+        <div id="movies" class="movies">
+        </div>
+      </div>
+    `;
+  }
+
   runWhenUserIsSearching(callback) {
     document.getElementById('query').addEventListener('change', (event) => {
       callback(event.target.value);
@@ -38,6 +48,10 @@ class FavoriteMovieSearchView {
     document
       .getElementById('movie-search-container')
       .dispatchEvent(new Event('movies:searched:updated'));
+  }
+
+  showFavoriteMovies(movies) {
+    document.getElementById('movies').innerHTML = '<div class="movie-item__not__found"></div>';
   }
 }
 
