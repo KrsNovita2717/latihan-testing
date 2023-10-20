@@ -1,6 +1,6 @@
 import { spyOn } from 'jest-mock';
-import FavoriteMovieIdb from '../src/scripts/data/favorite-movie-idb';
 import FavoriteMovieSearchPresenter from '../src/scripts/views/pages/liked-movies/favorite-movie-search-presenter';
+import FavoriteMovieIdb from '../src/scripts/data/favorite-movie-idb';
 
 describe('Searching movies', () => {
   let presenter;
@@ -12,7 +12,7 @@ describe('Searching movies', () => {
     queryElement.dispatchEvent(new Event('change'));
   };
 
-  beforeEach(() => {
+  const setMovieSearchContainer = () => {
     document.body.innerHTML = `
       <div id="movie-search-container">
         <input id="query" type="text">
@@ -22,9 +22,17 @@ describe('Searching movies', () => {
         </div>
       </div>
     `;
-
+  };
+  const constructPresenter = () => {
     spyOn(FavoriteMovieIdb, 'searchMovies');
-    presenter = new FavoriteMovieSearchPresenter({ favoriteMovies: FavoriteMovieIdb });
+    presenter = new FavoriteMovieSearchPresenter({
+      favoriteMovies: FavoriteMovieIdb,
+    });
+  };
+
+  beforeEach(() => {
+    setMovieSearchContainer();
+    constructPresenter();
   });
 
   it('should be able to capture the query typed by the user', () => {
