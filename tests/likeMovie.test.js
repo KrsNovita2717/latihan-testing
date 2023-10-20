@@ -1,3 +1,4 @@
+import FavoriteMovieIdb from '../src/scripts/data/favorite-movie-idb';
 import LikeButtonInitiator from '../src/scripts/utils/like-button-initiator';
 
 describe('Liking A Movie', () => {
@@ -23,5 +24,22 @@ describe('Liking A Movie', () => {
       },
     });
     expect(document.querySelector('[aria-label="unlike this movie"]')).toBeFalsy();
+  });
+
+  it('should be able to like the movie', async () => {
+    document.body.innerHTML = '<div id="likeButtonContainer"></div>';
+    await LikeButtonInitiator.init({
+      likeButtonContainer: document.querySelector('#likeButtonContainer'),
+      movie: {
+        id: 1,
+      },
+    });
+
+    document.querySelector('#likeButton').dispatchEvent(new Event('click'));
+
+    const movie = await FavoriteMovieIdb.getMovie(1);
+    expect(movie).toEqual({ id: 1 });
+
+    await FavoriteMovieIdb.deleteMovie(1);
   });
 });
