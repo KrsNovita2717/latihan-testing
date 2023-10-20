@@ -71,3 +71,12 @@
 3. Posibilitas bila pengguna memasukkan kueri pencarian dan tidak ada film yang cocok.
      1. Presenter meminta Model untuk mencari film.
      2. Presenter akan menampilkan informasi tidak ada film yang ditemukan pada View.
+
+## Alur testing CodeceptJS
+- Buka halaman utama.
+- Pilih salah satu film. Misalnya film pertama.
+- Klik film tersebut.
+- Aplikasi membawa user ke halaman detail film.
+- Kita menekan tombol menyukai film.
+- Kita buka halaman daftar film yang disukai.
+- Kita melihat satu film yang telah disukai.
