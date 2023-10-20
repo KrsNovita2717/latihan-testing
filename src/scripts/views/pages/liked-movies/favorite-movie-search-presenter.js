@@ -16,6 +16,17 @@ class FavoriteMovieSearchPresenter {
     this._favoriteMovies.searchMovies(this.latestQuery);
   }
 
+  _showFoundMovies(movies) {
+    const html = movies.reduce(
+      (carry, movie) => carry.concat(`
+        <li class="movie">
+          <span class="movie__title">${movie.title || '-'}</span>
+        </li>`),
+      '',
+    );
+    document.querySelector('.movies').innerHTML = html;
+  }
+
   get latestQuery() {
     return this._latestQuery;
   }

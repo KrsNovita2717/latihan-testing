@@ -42,6 +42,9 @@
 1. Posibilitas bila pengguna memasukkan kueri pencarian “film A”.
      1. Presenter akan meminta ke Model untuk memberikan film yang disukai dengan yang cocok untuk pencarian “film A”.
      2. Presenter akan menampilkan ke View (DOM) semua film yang dikembalikan oleh Model.
+          1. Presenter meminta FavoriteMovies mencari fillm.
+          2. Presenter menerima film hasil pencarian.
+          3. Presenter menampilkan film hasil pencarian.
 2. Posibilitas bila pengguna memasukkan kueri pencarian kosong seperti “”, “ “, atau tab.
      1. Presenter akan meminta Model untuk memberikan semua film yang disukai.
      2. Presenter akan menampilkan ke View semua film yang disukai yang telah diberikan oleh Model.
