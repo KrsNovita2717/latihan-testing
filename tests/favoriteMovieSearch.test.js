@@ -164,4 +164,29 @@ describe('Searching movies', () => {
       expect(favoriteMovies.getAllMovies).toHaveBeenCalled();
     });
   });
+
+  describe('When no favorite movies could be found', () => {
+    it('should show the empty message', (done) => {
+      document
+        .getElementById('movie-search-container')
+        .addEventListener('movies:searched:updated', () => {
+          expect(document.querySelectorAll('.movies__not__found').length).toEqual(1);
+          done();
+        });
+      // eslint-disable-next-line no-unused-vars
+      favoriteMovies.searchMovies.mockImplementation((query) => []);
+      searchMovies('film a');
+    });
+
+    it('should not show any movie', (done) => {
+      document.getElementById('movie-search-container')
+        .addEventListener('movies:searched:updated', () => {
+          expect(document.querySelectorAll('.movie').length).toEqual(0);
+          done();
+        });
+      // eslint-disable-next-line no-unused-vars
+      favoriteMovies.searchMovies.mockImplementation((query) => []);
+      searchMovies('film a');
+    });
+  });
 });
