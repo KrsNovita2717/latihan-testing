@@ -19,3 +19,6 @@
 4. Film dihapus dari daftar film yang disukai.
      1. Film berhasil dihapus.
      2. Ternyata film tidak ada dalam daftar film yang disukai.
+
+## List ToDo:
+1. Memberi nama yang lebih berbeda untuk **createLikeButtonTemplate** dan **createLikedButtonTemplate**.
