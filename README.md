@@ -28,6 +28,7 @@
 ## List ToDo:
 1. Memberi nama yang lebih berbeda untuk **createLikeButtonTemplate** dan **createLikedButtonTemplate**.
 2. Alur negatif: sistem tidak memproses penyimpanan dan menyebabkan kegagalan jika menyimpan movie tanpa ID.
+3. Meringkas kode untuk mempersiapkan tes.
 
 ## Daftar kontrak Favorite Movies
 - Dapat mengembalikan film yang tersimpan berdasarkan kunci tertentu.
