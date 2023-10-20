@@ -1,3 +1,4 @@
+/* eslint-disable no-new */
 import FavoriteMovieSearchView from '../src/scripts/views/pages/liked-movies/favorite-movie-search-view';
 import FavoriteMovieShowPresenter from '../src/scripts/views/pages/liked-movies/favorite-movie-show-presenter';
 
@@ -23,6 +24,19 @@ describe('Showing all favorite movies', () => {
       presenter._displayMovies(movies);
 
       expect(document.querySelectorAll('.movie-item__not__found').length).toEqual(1);
+    });
+
+    fit('should ask for the favorite movies', () => {
+      const favoriteMovies = {
+        getAllMovies: jest.fn(),
+      };
+
+      new FavoriteMovieShowPresenter({
+        view,
+        favoriteMovies,
+      });
+
+      expect(favoriteMovies.getAllMovies).toHaveBeenCalledTimes(1);
     });
   });
 });
