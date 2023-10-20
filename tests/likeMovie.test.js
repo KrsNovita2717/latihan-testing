@@ -1,4 +1,3 @@
-import { async } from 'regenerator-runtime';
 import FavoriteMovieIdb from '../src/scripts/data/favorite-movie-idb';
 import LikeButtonInitiator from '../src/scripts/utils/like-button-initiator';
 
@@ -61,5 +60,14 @@ describe('Liking A Movie', () => {
 
     expect(await FavoriteMovieIdb.getAllMovies()).toEqual([{ id: 1 }]);
     await FavoriteMovieIdb.deleteMovie(1);
+  });
+
+  xit('should not add a movie when it has no id', async () => {
+    await LikeButtonInitiator.init({
+      likeButtonContainer: document.querySelector('#likeButtonContainer'),
+      movie: {},
+    });
+    document.querySelector('#likeButton').dispatchEvent(new Event('click'));
+    expect(await FavoriteMovieIdb.getAllMovies()).toEqual([]);
   });
 });
