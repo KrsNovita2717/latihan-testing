@@ -1,6 +1,6 @@
 /* eslint-disable class-methods-use-this */
 import FavoriteMovieSearchPresenter from '../src/scripts/views/pages/liked-movies/favorite-movie-search-presenter';
-import FavoriteMovieSearchView from '../src/scripts/views/pages/liked-movies/favorite-movie-search-view';
+import FavoriteMovieSearchView from '../src/scripts/views/pages/liked-movies/favorite-movie-view';
 
 describe('Searching movies', () => {
   let presenter;
