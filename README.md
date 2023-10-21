@@ -36,6 +36,18 @@
      2. Model mengembalikan daftar kosong.
      3. Presenter meminta View menampilkan informasi bahwa belum ada film yang disukai.
 
+
+## Scenario E : melakukan testing dengan CodeceptJS
+1. Pastikan belum ada film yang disukai.
+2. Buka halaman utama.
+3. Pilih tiga film untuk disukai.
+4. Buka halaman daftar film yang disukai.
+5. Pastikan tiga film di atas ditampilkan.
+6. Lakukan pencarian terhadap salah satu film.
+7. Pastikan hasil pencarian film benar.
+     1. Jumlah film sesuai.
+     2. Judul film sesuai.
+
 ## List ToDo:
 1. Memberi nama yang lebih berbeda untuk **createLikeButtonTemplate** dan **createLikedButtonTemplate**.
 2. Alur negatif: sistem tidak memproses penyimpanan dan menyebabkan kegagalan jika menyimpan movie tanpa ID.
